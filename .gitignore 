@@ -3,3 +3,4 @@
 *.xcodeproj/project.xcworkspace/contents.xcworkspacedata
 *.xcodeproj/project.xcworkspace/xcshareddata/IDEWorkspaceChecks.plist
 *.xcuserdatad/xcschemes/xcschememanagement.plist
+*.plist
