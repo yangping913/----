@@ -4,21 +4,21 @@
 int main()
 {
     char a[100],b[100];
-    int c,d,g=0;
-    memset(a,0,sizeof(a));
-    memset(b,0,sizeof(b));
-    gets(a);
-    d=strlen(a);
-
-    for(c=d-1; c>=0; c--)
+    int c,d,t=0,n;
+    scanf("%d",&n);
+    for(int i=0;i<n;i++)
     {
-        b[g]=a[c];
-        g++;
+        gets(a);
+        d=strlen(a);
+        for(c=d-1; c>=0; c--)
+        {
+            b[t]=a[c];
+            t++;
+        }
+        if(strcmp(a,b)==0)
+            printf("yes");
+        else
+            printf("no");
     }
-    if(strcmp(a,b)==0)
-        printf("yes");
-    else
-        printf("no");
     return 0;
 }
-
