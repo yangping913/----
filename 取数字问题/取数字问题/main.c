@@ -1,35 +1,27 @@
 #include<stdio.h>
-#include<string.h>
-int a[20][20],ans=10000,m,n;
-int min(int c,int d)
+int a[100][100];
+int max=100000,m,n;
+void search(int i,int j,int sum)
 {
-    return c<d?c:d;
-}
-void dfs(int i,int j,int sum)
-{
-    sum=sum+a[i][j];
-    if(i<m)
-        dfs(i+1,j,sum);
-    if(j<n)
-        dfs(i,j+1,sum);
-    if(i==m&&j==n&&sum>0)
-        ans=min(ans,sum);
-    
+    sum+=a[i][j];
+    if(i<n)
+        search(i+1,j,sum);
+    if(j<m)
+        search(i,j+1,sum);
+    if(i==n&&j==m&&sum<max&&sum>0)
+        max=sum;
 }
 int main()
 {
-    int i,j;
-    scanf("%d%d",&m,&n);
-    for(i=1;i<=m;i++)
+    int j,i;
+    scanf("%d %d",&n,&m);
+    for(i=1;i<=n;i++)
     {
-        for(j=1;j<=n;j++)
+        for(j=1;j<=m;j++)
         {
             scanf("%d",&a[i][j]);
         }
     }
-    dfs(1,1,0);
-    if(ans==10000)
-        printf("-1");
-    else
-        printf("%d",ans);
+    search(1,1,0);
+    printf("%d\n",max);
 }
