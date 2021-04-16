@@ -1,19 +1,22 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
+#include<string.h>
+#include<stdio.h>
 int main()
 {
-
-    char str1[1000],str2[1000];
-    scanf("%s %s",str1,str2);
-    int l1=strlen(str1);
-    int l2=strlen(str2);
-    int flag=0,i;
-    if(l1!=l2) flag=1;
-    for(i=0;i<l1;i++){
-        if(str1[i]!=str2[l1-i-1]) flag++;
+    char a[1000],b[1000];
+    int n,i,j=1,m;
+    scanf("%s%s",a,b);
+    m=strlen(b);
+    n=strlen(a);
+    if(m!=n)
+        j=0;
+    for(i=0;i<n;i++)
+    {
+        if(a[i]!=b[n-1-i])
+            j=0;
     }
-    if(flag==0) printf("wuhu!\n");
-    else printf("haoziweizhi\n");
+    if(j==1)
+        printf("wuhu!\n");
+    else if(j==0)
+        printf("haoziweizhi!\n");
     return 0;
 }

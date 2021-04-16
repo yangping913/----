@@ -1,7 +1,7 @@
 #include<stdio.h>
 int main()
 {
-    int i,n,sum,t=0,m;
+    int n,m,i;
     scanf("%d",&n);
     while(n--)
     {
@@ -9,18 +9,21 @@ int main()
         for(i=0;;i++)
         {
             if(m==1)
+            {
                 break;
+            }
             if(m%3!=0)
-                {
-                    i=-1;
-                    break;
-                }
+            {
+                i=-1;
+                break;
+            }
+            
             if(m%6==0)
-                m=m/6;
-            else if(m%6!=0&&m%3==0)
+                m/=6;
+            else
                 m*=2;
         }
-        t=i;
-        printf("%d\n",t);
+        
+            printf("%d\n",i);
     }
 }
